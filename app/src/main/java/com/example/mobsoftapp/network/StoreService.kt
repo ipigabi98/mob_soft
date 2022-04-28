@@ -1,4 +1,4 @@
 package com.example.mobsoftapp.network
 
-class StoreService {
+interface StoreService {
 }
