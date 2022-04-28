@@ -1,4 +1,4 @@
-package com.example.mobsoftapp
+package com.example.mobsoftapp.ui.main
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,10 +9,13 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import com.example.mobsoftapp.R
 import com.example.mobsoftapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    //private val mainViewModel: MainViewModel by viewModels()
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
