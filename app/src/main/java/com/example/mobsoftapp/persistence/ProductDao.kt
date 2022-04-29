@@ -17,4 +17,7 @@ interface ProductDao {
 
     @Query("SELECT * FROM Product")
     suspend fun getProductList(): List<Product>
+
+    @Query("SELECT * FROM Product")
+    fun getProductListTest(): List<Product>
 }
