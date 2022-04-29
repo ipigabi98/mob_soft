@@ -1,6 +1,7 @@
 package com.example.mobsoftapp.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,17 +11,31 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.compose.runtime.collectAsState
 import com.example.mobsoftapp.R
 import com.example.mobsoftapp.databinding.ActivityMainBinding
+import com.example.mobsoftapp.model.Product
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
+import timber.log.Timber
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    //private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        var productList: List<Product> = mainViewModel.getProductList()
+        Log.d("APPLICATION", "size: " + productList.size)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
