@@ -12,9 +12,11 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
+import androidx.fragment.app.FragmentTransaction
 import com.example.mobsoftapp.R
 import com.example.mobsoftapp.databinding.ActivityMainBinding
 import com.example.mobsoftapp.model.Product
+import com.example.mobsoftapp.ui.dialogs.CreateProductDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -46,10 +48,16 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+//        binding.fab.setOnClickListener { view ->
+//            /*nackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                .setAction("Action", null).show()*/
+//            //showCreateProductDialogFragment()
+//        }
+    }
+
+    private fun showCreateProductDialogFragment() {
+        var createProductDialogFragment = CreateProductDialogFragment()
+        createProductDialogFragment.show(supportFragmentManager, "")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

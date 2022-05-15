@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Product(
-    @PrimaryKey val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long?,
     var title: String,
     var price: Double,
     var description: String,
@@ -14,4 +14,17 @@ data class Product(
     var image: String,
     @Embedded
     var rating: Rating
-)
+) {
+
+    companion object {
+        fun mock() = Product(
+            id = 1,
+            title = "Nike Shoes",
+            price = 200.0,
+            description = "description",
+            category = "category",
+            image = "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+            rating = Rating(rate = 10.0, count = 100)
+        )
+    }
+}

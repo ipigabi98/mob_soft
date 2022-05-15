@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "title": "getProductById_test_title",
+    "price": 10.10,
+    "description": "getProductById_test_description",
+    "category": "getProductById_test_category",
+    "image": "getProductById_test_image",
+    "rating": {
+        "rate": 10.10,
+        "count": 10
+    }
+}
