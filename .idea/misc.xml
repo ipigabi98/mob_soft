@@ -3,13 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1965" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/create_product_dialog_fragment.xml" value="0.2" />
+        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/delete_product_dialog_fragment.xml" value="0.264" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/fragment_first.xml" value="0.25416666666666665" />
-        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/fragment_product_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/fragment_product_detail.xml" value="0.2" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/fragment_product_list.xml" value="0.271286231884058" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
         <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/product_row_item.xml" value="0.264" />
+        <entry key="..\:/WORK/BME-MSC/4_felev/Mobilszoftver_labor/Lab2/MobSoftApp/app/src/main/res/layout/update_product_dialog_fragment.xml" value="0.18854166666666666" />
       </map>
     </option>
   </component>

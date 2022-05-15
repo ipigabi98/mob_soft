@@ -13,8 +13,27 @@
 
         <action
             android:id="@+id/action_ProductListFragment_to_ProductDetailFragment"
-            app:destination="@id/ProductDetailFragment" />
+            app:destination="@id/ProductDetailFragment">
+
+            <argument
+                android:name="itemId"
+                app:argType="long">
+            </argument>
+
+        </action>
     </fragment>
+
+    <fragment
+        android:id="@+id/DeleteProductDialogFragment"
+        android:name="com.example.mobsoftapp.ui.dialogs.DeleteProductDialogFragment"
+        tools:layout="@layout/delete_product_dialog_fragment">
+        <action
+            android:id="@+id/action_DeleteDialog_to_ProductList_Fragment"
+            app:destination="@+id/ProductListFragment">
+
+        </action>
+    </fragment>
+
     <fragment
         android:id="@+id/ProductDetailFragment"
         android:name="com.example.mobsoftapp.ui.details.ProductDetailFragment"

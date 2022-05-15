@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "title": "updateProduct_test_title",
+    "price": 10.10,
+    "description": "updateProduct_test_description",
+    "category": "updateProduct_test_category",
+    "image": "updateProduct_test_image",
+    "rating": {
+        "rate": 10.10,
+        "count": 10
+    }
+}
