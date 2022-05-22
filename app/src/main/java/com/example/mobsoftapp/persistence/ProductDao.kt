@@ -9,6 +9,9 @@ interface ProductDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertProductList(products: List<Product>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertProduct(product: Product)
+
     @Update
     suspend fun updateProduct(product: Product)
 

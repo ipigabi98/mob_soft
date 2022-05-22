@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         var productList: List<Product> = mainViewModel.getProductList()
-        Log.d("APPLICATION", "size: " + productList.size)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,16 +47,6 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-//        binding.fab.setOnClickListener { view ->
-//            /*nackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()*/
-//            //showCreateProductDialogFragment()
-//        }
-    }
-
-    private fun showCreateProductDialogFragment() {
-        var createProductDialogFragment = CreateProductDialogFragment()
-        createProductDialogFragment.show(supportFragmentManager, "")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,9 +59,16 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
         return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+            R.id.action_settings -> {
+                val navController = findNavController(R.id.nav_host_fragment_content_main)
+                navController.navigate(R.id.to_about_page)
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
     }
 

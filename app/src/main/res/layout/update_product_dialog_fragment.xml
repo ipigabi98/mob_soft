@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,4 +7,103 @@
     android:orientation="vertical"
     tools:context=".ui.dialogs.UpdateProductDialogFragment">
 
-</LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/update_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_500"
+            android:padding="20dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/update_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/dollar_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/update_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="@string/price"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/update_description"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/update_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/category"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/update_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/image"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/update_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="@string/rating"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/update_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/rating_count"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/update_button"
+                android:text="@string/update"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:backgroundTint="@color/purple_500"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -26,11 +26,18 @@ class DetailRepository @Inject constructor(
     @WorkerThread
     fun deleteProduct(productId: Long) = flow {
         productDao.deleteProduct(productId)
-
-        var size = productDao.getProductList().size
-        Log.d("SIZE AFTER DELETE", size.toString())
-
         emit("Deleted")
     }.flowOn(Dispatchers.IO)
 
+    @WorkerThread
+    fun saveProduct(product: Product) = flow {
+        productDao.insertProduct(product)
+        emit("Inserted")
+    }.flowOn(Dispatchers.IO)
+
+    @WorkerThread
+    fun updateProduct(product: Product) = flow {
+        productDao.updateProduct(product)
+        emit("Updated")
+    }.flowOn(Dispatchers.IO)
 }

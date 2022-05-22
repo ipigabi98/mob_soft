@@ -34,4 +34,24 @@ class DetailViewModel @Inject constructor(
         }
         return result
     }
+
+    fun saveProduct(product: Product): String {
+        var result: String = ""
+        runBlocking {
+            withContext(Dispatchers.IO) {
+                result = detailRepository.saveProduct(product).first()
+            }
+        }
+        return result
+    }
+
+    fun updateProduct(product: Product): String {
+        var result: String = ""
+        runBlocking {
+            withContext(Dispatchers.IO) {
+                result = detailRepository.updateProduct(product).first()
+            }
+        }
+        return result;
+    }
 }

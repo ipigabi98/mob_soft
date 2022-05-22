@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "857311472911",
+    "project_id": "mobsoftapp",
+    "storage_bucket": "mobsoftapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857311472911:android:cc85079e70269d9b4f227a",
+        "android_client_info": {
+          "package_name": "com.example.mobsoftapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857311472911-c47d76rbs1pe8mljli367rrfuvs0eaf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoKdhuWP1aq_zTiyuQI8xY-v9mMUP3J4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857311472911-c47d76rbs1pe8mljli367rrfuvs0eaf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
