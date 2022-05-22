@@ -20,6 +20,8 @@ import com.example.mobsoftapp.R
 import com.example.mobsoftapp.databinding.FragmentProductDetailBinding
 import com.example.mobsoftapp.model.Product
 import com.example.mobsoftapp.ui.dialogs.DeleteProductDialogFragment
+import com.example.mobsoftapp.ui.dialogs.MyCallbackListener
+import com.example.mobsoftapp.ui.dialogs.UpdateProductDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.Executors
 
@@ -27,7 +29,7 @@ import java.util.concurrent.Executors
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 @AndroidEntryPoint
-class ProductDetailFragment : Fragment() {
+class ProductDetailFragment : Fragment(), MyCallbackListener {
 
     private val detailViewModel: DetailViewModel by viewModels()
     private var product: Product? = null
@@ -45,8 +47,12 @@ class ProductDetailFragment : Fragment() {
 
         setBindings()
 
-        binding.fabDelete.setOnClickListener { view ->
+        binding.fabDelete.setOnClickListener {
             activity?.let { showDeleteDialog(it) }
+        }
+
+        binding.fabUpdate.setOnClickListener {
+            activity?.let { it1 -> showUpdateDialog(it1) }
         }
 
         return binding.root
@@ -80,17 +86,32 @@ class ProductDetailFragment : Fragment() {
         }
     }
 
+    private fun showUpdateDialog(activity: FragmentActivity) {
+        var updateProductDialogFragment = product?.let { UpdateProductDialogFragment(it, this) }
+        updateProductDialogFragment!!.show(activity.supportFragmentManager, "")
+    }
+
     private fun loadImage(imageUrl: String) {
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
 
         executor.execute {
-            val inputStream = java.net.URL(imageUrl).openStream()
-            val image = BitmapFactory.decodeStream(inputStream)
+            try {
+                val inputStream = java.net.URL(imageUrl).openStream()
+                val image = BitmapFactory.decodeStream(inputStream)
 
-            handler.post {
-                _binding!!.detailImage.setImageBitmap(image)
+                handler.post {
+                    _binding!!.detailImage.setImageBitmap(image)
+                }
+            } catch (e: Exception) {
+
             }
         }
+    }
+
+    override fun onDismiss() {
+        val productId = arguments?.getLong("itemId")!!
+        product = detailViewModel.loadProduct(productId)
+        setBindings()
     }
 }

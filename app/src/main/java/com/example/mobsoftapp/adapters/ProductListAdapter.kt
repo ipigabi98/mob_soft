@@ -46,16 +46,25 @@ class ProductListAdapter(private var productList: List<Product>, private var nav
         return productList.size
     }
 
+    fun update(newProductList: List<Product>) {
+        productList = newProductList
+        notifyDataSetChanged()
+    }
+
     private fun getImageBitMap(imageUrl: String, holder: ProductViewHolder) {
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
 
         executor.execute {
-            val inputStream = java.net.URL(imageUrl).openStream()
-            val image = BitmapFactory.decodeStream(inputStream)
+            try {
+                val inputStream = java.net.URL(imageUrl).openStream()
+                val image = BitmapFactory.decodeStream(inputStream)
 
-            handler.post {
-                holder.imageView.setImageBitmap(image)
+                handler.post {
+                    holder.imageView.setImageBitmap(image)
+                }
+            } catch (e: Exception) {
+
             }
         }
     }

@@ -44,4 +44,16 @@
             android:id="@+id/action_ProductDetailFragment_to_ProductListFragment"
             app:destination="@id/ProductListFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/AboutPageFragment"
+        android:name="com.example.mobsoftapp.ui.about.AboutPageFragment"
+        android:label="About me"
+        tools:layout="@layout/about_page">
+    </fragment>
+
+    <action
+        android:id="@+id/to_about_page"
+        app:destination="@+id/AboutPageFragment"/>
+
 </navigation>

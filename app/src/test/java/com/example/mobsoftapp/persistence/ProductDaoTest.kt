@@ -1,6 +1,5 @@
 package com.example.mobsoftapp.persistence
 
-import android.service.autofill.FieldClassification
 import com.example.mobsoftapp.model.Product
 import com.example.mobsoftapp.utils.MockTestUtil.mockProductList
 import kotlinx.coroutines.runBlocking
@@ -33,6 +32,16 @@ class ProductDaoTest : LocalDatabase() {
 
         val mockData = Product.mock()
         MatcherAssert.assertThat(loadFromDB[0].toString(), `is`(mockData.toString()))
+    }
+
+    @Test
+    fun insertAndLoadProduct() = runBlocking {
+        var mockData = Product.mock()
+
+        productDao.insertProduct(mockData)
+        var loadedProduct = productDao.getProduct(1L)
+
+        MatcherAssert.assertThat(loadedProduct.toString(), `is`(mockData.toString()))
     }
 
     @Test
